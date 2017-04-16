@@ -1,0 +1,63 @@
+.movieBox {
+  position: relative;
+  width: 162px;
+  height: 261px;
+  border: 1px solid #efefef;
+}
+
+.movieImage {
+  width: 160px;
+  height: 220px;
+  background-image: url(../../../assets/image.jpg);
+  background-size: 100% 100%;
+}
+
+.sellTicket {
+  display: block;
+  width: 160px;
+  height: 39px;
+  padding-top: 0.8rem;
+  color: red;
+  font-size: 1.5rem;
+  border-top: 1px solid #efefef;
+}
+
+.sellTicket:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+}
+
+.movieMessage {
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  color: white;
+  background-color: #515354;
+  opacity: 0.7;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.movieName {
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movieName, .movieScore {
+  height: 22px;
+  font-family: '黑体';
+  font-size: 1.6rem;
+}
+
+.movieScore {
+  padding-left: 7px;
+  font-style: italic;
+  color: #f5ad01;
+}
+
+.sellTicket {
+  text-align: center;
+}

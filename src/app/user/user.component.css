@@ -1,0 +1,30 @@
+.container {
+  padding: 0px;
+  min-width: 700px;
+  height: 800px;
+  border: 1px solid #efefef;
+}
+
+.nav-container {
+  float: left;
+  width: 30%;
+  height: 100%;
+  background-color: #f4f3f4;
+  border-right: 1px solid #efefef;
+}
+
+.nav-container > h3 {
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+}
+
+a {
+  font-size: 1.7rem;
+}
+
+.message-container {
+  float: left;
+  width: 70%;
+  height: 100%;
+}

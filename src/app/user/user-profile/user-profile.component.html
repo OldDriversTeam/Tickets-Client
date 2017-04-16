@@ -1,0 +1,61 @@
+<div class="profile-container">
+  <h4>基本信息</h4>
+  <hr>
+  <div class="user-register-container">
+    <div>
+        <div>
+            <form [formGroup]="userForm" (ngSubmit)="updateUser()" class="form-horizontal" role="form" novalidate>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.name }">
+                    <label class="col-sm-3 control-label">用户名：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control"  formControlName="name" type="text" placeholder="请输入4到20个字符">
+                        <div *ngIf="formErrors.name" class="text-danger">
+                            {{ formErrors.name }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">性别：</label>
+                    <div class="col-sm-8 gender-radio">
+                        <input formControlName="gender" name="gender" type="radio" value="MALE">男
+                        <input formControlName="gender" name="gender" type="radio" value="FEMALE">女
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.age }">
+                    <label class="col-sm-3 control-label">年龄：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="age" type="age" placeholder="请输入你的年龄">
+                        <div *ngIf="formErrors.age" class="text-danger">
+                            {{ formErrors.age }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.phone }">
+                    <label class="col-sm-3 control-label">手机号码：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="phone" type="text" placeholder="请输入你的手机号码">
+                        <div *ngIf="formErrors.phone" class="text-danger">
+                            {{ formErrors.phone }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.email }">
+                    <label class="col-sm-3 control-label">email：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="email" type="text" placeholder="请输入你的email">
+                        <div *ngIf="formErrors.email" class="text-danger">
+                            {{ formErrors.email }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="formErrors.formError" class="col-sm-offset-3 col-sm-8 alert alert-danger">{{ formErrors.formError }}</div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-8">
+                        <button type="submit" class="btn btn-info">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

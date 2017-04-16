@@ -1,0 +1,53 @@
+<div class="user-register-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">用户注册</h3>
+        </div>
+        <div class="panel-body">
+            <form [formGroup]="userForm" (ngSubmit)="Register()" class="form-horizontal" role="form" novalidate>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.name }">
+                    <label class="col-sm-3 control-label">用户名：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="name" type="text" placeholder="请输入4到20个字符">
+                        <div *ngIf="formErrors.name" class="text-danger">
+                            {{ formErrors.name }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.phone }">
+                    <label class="col-sm-3 control-label">手机号码：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="phone" type="text" placeholder="请输入你的手机号码">
+                        <div *ngIf="formErrors.phone" class="text-danger">
+                            {{ formErrors.phone }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.password }">
+                    <label class="col-sm-3 control-label">密码：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="password" validateEqual="confirmPassword" reverse=true type="password" placeholder="密码应至少为6位">
+                        <div *ngIf="formErrors.password" class="text-danger">
+                            {{ formErrors.password }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': formErrors.confirmPassword }">
+                    <label class="col-sm-3 control-label">重复密码：</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" formControlName="confirmPassword" validateEqual="password" type="password" placeholder="请重复输入密码">
+                        <div *ngIf="formErrors.confirmPassword" class="text-danger">
+                            {{ formErrors.confirmPassword }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="formErrors.formError" class="col-sm-offset-3 col-sm-8 alert alert-danger">{{ formErrors.formError }}</div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-8">
+                        <button [disabled]="userForm.invalid" type="submit" class="btn btn-success">注册</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

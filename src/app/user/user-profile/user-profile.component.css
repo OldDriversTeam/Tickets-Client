@@ -1,0 +1,11 @@
+.profile-container {
+  padding: 25px;
+}
+
+.gender-radio {
+  padding-top: 5px;
+}
+
+.gender-radio input {
+  margin-left: 5px;
+}
