@@ -1,0 +1,130 @@
+.movie-description-container {
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.movie-description, .select-movie-container {
+  overflow: auto;
+  margin: auto;
+  width: 60%;
+  min-width: 990px;
+  padding: 10px;
+}
+
+li {
+  list-style-type:none;
+  margin-bottom: 10px;
+}
+
+.image {
+  width: 210px;
+  height: 280px;
+}
+
+.description {
+  width: 590px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.des {
+  overflow: auto;
+}
+
+.introduction {
+  padding: 15px;
+}
+
+.clear {
+  clear: both;
+}
+
+.float {
+  float: left;
+}
+
+.date {
+  width: 156px;
+  height: 22px;
+}
+
+.messageTitle {
+  padding-left: 10px;
+}
+
+.message {
+  width: 480px;
+  padding-left: 10px;
+}
+
+.select-cinema-container {
+  overflow: auto;
+  margin-top: 30px;
+  background-color: #FFF6F5;
+  padding: 15px;
+  width: 60%;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.select-cinema {
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.cinema-list {
+  overflow: auto;
+}
+
+.cinema-box {
+  float: left;
+  padding: 5px;
+  margin-right: 25px;
+  margin-bottom: 6px;
+}
+
+.cinema-box:hover {
+  cursor: pointer;
+  background-color: #F42429;
+  color: white;
+}
+
+.selected-cinema {
+  background-color: #F42429;
+  color: white;
+}
+
+.cinema-movie-table {
+  margin-top: 30px;
+  width: 60%;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buy-ticket {
+  background-color: #F42429;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.cinema-movie-table td {
+  height: 60px !important;
+  padding-top: 20px !important;
+}
+
+.cinema-movie-table th:last-child {
+  padding-left: 37px !important;
+}
+
+.price {
+  color: #EB002A;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: -3px;
+  padding-left: 30px;
+}

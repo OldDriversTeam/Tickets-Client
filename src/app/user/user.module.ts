@@ -7,6 +7,7 @@ import { UserComponent } from './user.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { userRoutes } from './user.routes';
+import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { userRoutes } from './user.routes';
     ReactiveFormsModule,
     RouterModule.forChild(userRoutes)
   ],
-  declarations: [UserComponent, UserProfileComponent]
+  declarations: [UserComponent, UserProfileComponent, MyTicketsComponent]
 })
 export class UserModule { }

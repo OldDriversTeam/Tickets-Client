@@ -1,0 +1,98 @@
+<div class="movie-description-container">
+  <div class="movie-description">
+    <div class="des">
+      <h4>
+        <span class="title">速度与激情8</span>
+      </h4>
+      <hr>
+      <img src="../../../assets/image.jpg" class="image float">
+      <div class="description float">
+        <ul class="float messageTitle">
+          <li>
+            <span>首映：</span>
+          </li>
+          <li>
+            <span>导演：</span>
+          </li>
+          <li>
+            <span>类型：</span>
+          </li>
+          <li>
+            <span>国家：</span>
+          </li>
+          <li>
+            <span>语言：</span>
+          </li>
+          <li>
+            <span>片长：</span>
+          </li>
+          <li>
+            <span>主演：</span>
+          </li>
+        </ul>
+        <ul class="float message">
+          <li>
+            <span>{{movie.date}}</span>
+          </li>
+          <li>
+            <span>{{movie.director}}</span>
+          </li>
+          <li>
+            <span>{{movie.type}}</span>
+          </li>
+          <li>
+            <span>{{movie.area}}</span>
+          </li>
+          <li>
+            <span>{{movie.language}}</span>
+          </li>
+          <li>
+            <span>{{movie.length}}</span>
+          </li>
+          <li>
+            <span>{{movie.actors}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr id="divider" class="clear">
+    <div class="introduction">剧情介绍：{{movie.introduction}}</div>
+  </div>
+</div>
+
+<div class="select-cinema-container">
+  <div class="select-cinema">
+    <span>选择影院</span>
+  </div>
+  <hr>
+  <div class="cinema-list">
+    <div *ngFor="let cinema of cinemaList; index as i" class="cinema-box" [ngClass]="{'selected-cinema': i == selectedCinemaIndex}" (click)="selectCinema(cinema, $event.target, i)">{{cinema.name}}</div>
+  </div>
+</div>
+
+<div class="card-block cinema-movie-table">
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>放映时间</th>
+              <th>语言版本</th>
+              <th>放映厅</th>
+              <th>现价/影院价（元）</th>
+              <th>选座购票</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>20:00</td>
+              <td>英语3D</td>
+              <td>1号厅</td>
+              <td>
+                  <div class="price">39</div>
+              </td>
+              <td>
+                <a class="buy-ticket" [routerLink]="['/seat', 1, 2, 3]">选座购票</a>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

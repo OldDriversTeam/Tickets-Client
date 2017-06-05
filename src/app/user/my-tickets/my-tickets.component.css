@@ -1,0 +1,77 @@
+.order-detail {
+  margin-left: 1px;
+  width: 100%;
+}
+
+.order-detail table {
+  width: 100%;
+  text-align: center;
+}
+
+.menu {
+    height: 40px;
+    line-height: 40px;
+    background: #efefef;
+}
+
+.menu td:nth-child(1) {
+  width: 26%;
+}
+
+.menu td:nth-child(2) {
+  width: 24%;
+}
+
+.menu td:nth-child(3) {
+  width: 12%;
+}
+
+.menu td:nth-child(4) {
+  width: 14%;
+}
+
+.menu td:nth-child(5) {
+  width: 24%;
+}
+
+.order-detail table td {
+    border: 1px solid #ddd;
+}
+
+.info td {
+  padding: 10px;
+}
+
+.movie-info {
+  overflow: auto;
+}
+
+.movie-word-info {
+  font-size: 1rem;
+  height: 135px;
+  margin-left: 16px;
+}
+
+.movie-word-info>h5 {
+  font-weight: bold;
+}
+
+.movie-word-info div {
+  margin-bottom: 6px;
+}
+
+.poster {
+  width: 90px;
+  height: 135px;
+}
+
+.showing-info div {
+  margin-bottom: 10px;
+}
+
+.seat-info {
+  color: #999;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  margin-top: 6px;
+}

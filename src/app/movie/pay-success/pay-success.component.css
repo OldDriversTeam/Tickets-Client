@@ -1,0 +1,68 @@
+.buy-ticket-status {
+  overflow: auto;
+  width: 60%;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buy-ticket-status hr {
+  border-width: 2px;
+}
+
+.buy-ticket-status img {
+  margin-bottom: 5px;
+}
+
+.buy-ticket-status>div {
+  width: 25%;
+  color: #999999;
+}
+
+.done-step hr {
+  margin-top: 18px;
+  border-color: #26BB7E;
+}
+
+.done-step span {
+  color: #26BB7E;
+}
+
+.buy-ticket-status>div:nth-child(4) {
+  color: #EB002A;
+}
+
+.buy-ticket-status>div:nth-child(4) hr {
+  border-color: #EB002A;
+}
+
+.pay-success {
+  position: relative;
+  width: 60%;
+  height: 88px;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFF3F3;
+}
+
+.pay-success h5 {
+  margin-top: 37px;
+  margin-left: 20px;
+  color: #EB002A;
+  font-weight: bold;
+}
+
+.pay-success button {
+  border: 0;
+  margin-top: 23px;
+  margin-left: 20px;
+  width: 155px;
+  height: 42px;
+  color: white;
+  background-color: #eb002a;
+}
+
+.pay-success button:hover {
+  background-color: #F33658;
+}

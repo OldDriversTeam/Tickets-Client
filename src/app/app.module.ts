@@ -9,6 +9,10 @@ import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { MovieDescriptionComponent } from './movie/movie-description/movie-description.component';
+import { SeatComponent } from './movie/seat/seat.component';
+import { ConfirmOrderComponent } from './movie/confirm-order/confirm-order.component';
+import { PaySuccessComponent } from './movie/pay-success/pay-success.component';
 
 import { EqualValidator } from './directives/equal-validator.directive';
 
@@ -17,14 +21,18 @@ import {appRoutes} from './app.routes';
 import { AuthService } from './services/auth.service';
 import { ApiService } from './services/api.service';
 import { MovieService } from './services/movie.service';
-
+import { CinemaService } from './services/cinema.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserLoginComponent,
     UserRegisterComponent,
-    EqualValidator
+    MovieDescriptionComponent,
+    EqualValidator,
+    SeatComponent,
+    ConfirmOrderComponent,
+    PaySuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,8 @@ import { MovieService } from './services/movie.service';
   providers: [
     AuthService,
     ApiService,
-    MovieService
+    MovieService,
+    CinemaService
   ],
   bootstrap: [AppComponent]
 })

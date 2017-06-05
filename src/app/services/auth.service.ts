@@ -8,7 +8,15 @@ import { ApiService } from './api.service'
 
 @Injectable()
 export class AuthService {
-  public thisUser = null;
+  public thisUser = {
+      "id": "1",
+      "name": "zhudui",
+      "gender": "MALE",
+      "age": 20,
+      "phone": 11111111111,
+      "email": "11@qq.com",
+      "password": "qweqwe"
+    };
   public currentUser: Subject<any> = new Subject();
 
   constructor(public http:Http,
@@ -19,7 +27,6 @@ export class AuthService {
   }
 
   public getCurrentUser() {
-    // return this.currentUser;
     return this.currentUser.asObservable();
   }
 

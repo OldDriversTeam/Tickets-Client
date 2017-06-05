@@ -1,0 +1,212 @@
+.buy-ticket-status {
+  overflow: auto;
+  width: 60%;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buy-ticket-status hr {
+  border-width: 2px;
+}
+
+.buy-ticket-status img {
+  margin-bottom: 5px;
+}
+
+.buy-ticket-status>div {
+  width: 25%;
+  color: #999999;
+}
+
+.done-step hr {
+  margin-top: 18px;
+  border-color: #26BB7E;
+}
+
+.done-step span {
+  color: #26BB7E;
+}
+
+.buy-ticket-status>div:nth-child(2) {
+  color: #EB002A;
+}
+
+.buy-ticket-status>div:nth-child(2) hr {
+  border-color: #EB002A;
+}
+
+.seat-info-container {
+  overflow: auto;
+  width: 60%;
+  min-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seat-info-container>div {
+  border: 1px solid #E5E5E5;
+}
+
+.seat {
+  width: 68%;
+  height: 580px;
+  padding: 20px;
+}
+
+.screen {
+  width: 580px;
+  height: 30px;
+  background-image: url(../../../assets/seat.png);
+}
+
+.row-index {
+  color: white;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../assets/seat.png);
+  background-position: -169px 87px;
+  margin-right: 5px;
+}
+
+.seat-row {
+  overflow: auto;
+  width: 600px;
+  margin-bottom: 3px;
+}
+
+.one-seat {
+  width: 26px;
+  height: 29px;
+  background-image: url(../../../assets/seat.png);
+  background-position: -16px 88px;
+  margin-left: 12px;
+}
+
+.empty-seat {
+  background-image: url(../../../assets/seat.png);
+  background-position: -16px 88px;
+}
+
+.selected-seat {
+  background-image: url(../../../assets/seat.png);
+  background-position: -42px 88px;
+}
+
+.unavailable-seat {
+  background-image: url(../../../assets/seat.png);
+  background-position: -68px 88px;
+}
+
+.seat-hint {
+  width: 320px;
+  overflow: auto;
+}
+
+.seat-hint span:nth-child(1) {
+  display: inline-block;
+  width: 26px;
+  height: 29px;
+}
+
+.seat-hint span:nth-child(2) {
+  position: relative;
+  top: -10px;
+}
+
+.seat-hint div:nth-child(1) {
+  margin-right: 24px;
+}
+
+.seat-hint div:nth-child(2) {
+  margin-right: 24px;
+}
+
+.selected-seat-info {
+  position: relative;
+  width: 32%;
+  height: 580px;
+  padding: 15px;
+  background-color: #FFF5F5;
+}
+
+.movie-info {
+  overflow: auto;
+}
+
+.movie-word-info {
+  font-size: 1rem;
+  height: 150px;
+  margin-left: 16px;
+}
+
+.movie-word-info>h5 {
+  font-weight: bold;
+}
+
+.movie-word-info div {
+  margin-bottom: 6px;
+}
+
+.poster {
+  width: 100px;
+  height: 150px;
+}
+
+.showing-date {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #EB002A;
+}
+
+.selected-seat-detail>div {
+  margin-top: 12px;
+}
+
+.selected-seat-detail>div>span:first-child {
+  color: #afafaf;
+}
+
+.count {
+  font-weight: bold;
+  color: #EB002A;
+}
+
+.seat-confirm {
+  overflow: auto;
+}
+
+.seat-box {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid #EB002A;
+  color: #EB002A;
+  background-color: white;
+  margin-right: 10px;
+  margin-bottom: 6px;
+}
+
+.phone-number {
+  margin-top: 6px;
+  height: 40px;
+  background-color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.confirm-button {
+  border: 0;
+  width: 155px;
+  height: 42px;
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  color: white;
+  background-color: #eb002a;
+}
+
+.confirm-button:hover {
+  background-color: #F33658;
+}

@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 0px) {
   .container {
       width: 970px;
   }
@@ -6,7 +6,18 @@
 
 @media (min-width: 1500px) {
   .container {
-      width: 1450px;
+      width: 1150px;
   }
 }
 
+.container {
+  border: 1px solid blue;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.movie-list-container {
+  min-width: 725px;
+}

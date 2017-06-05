@@ -22,11 +22,20 @@ export class AppComponent {
               }
 
   ngOnInit() {
-    this.authService.getCurrentUser()
-      .subscribe(data => {
-      this.currentUser = data;
-      console.log(this.currentUser);
-    });
+    // this.authService.getCurrentUser()
+    //   .subscribe(data => {
+    //   this.currentUser = data;
+    //   console.log(this.currentUser);
+    // });
+    this.currentUser = {
+      "id": "1",
+      "name": "zhudui",
+      "gender": "MALE",
+      "age": 20,
+      "phone": 11111111111,
+      "email": "11@qq.com",
+      "password": "qweqwe"
+    };
   }
 
   logout() {

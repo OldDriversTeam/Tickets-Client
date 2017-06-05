@@ -1,0 +1,93 @@
+<div class="buy-ticket-status">
+  <div class="float done-step" align="center">
+    <img class="done" src="../../../assets/done.png">
+    <span class="done-span">1.选择影片，场次</span>
+    <hr class="done-hr">
+  </div>
+  <div class="float" align="center">
+    <span>2.选座，填手机号</span>
+    <hr>
+  </div>
+  <div class="float" align="center">
+    <span>3.确认订单，支付</span>
+    <hr>
+  </div>
+  <div class="float" align="center">
+    <span>4.支付成功，影院取票观影</span>
+    <hr>
+  </div>
+</div>
+
+<div class="seat-info-container">
+  <div class="seat float" align="center">
+    <div class="screen"></div>
+    <h5>大地影院-人和华通店 影厅4 银幕</h5>
+    <div class="seat-row" *ngFor="let seatRow of seats; index as i">
+      <div class="row-index float">{{i+1}}</div>
+      <div class="one-seat float" *ngFor="let seat of seatRow; index as j" [ngClass]="{'empty-seat': seat == 'empty', 'selected-seat': seat == 'selected', 'unavailable-seat': seat == 'unavailable'}" (click)="toggleSeat(i, j)"></div>
+    </div>
+    <hr>
+    <div class="seat-hint">
+      <div class="float">
+        <span class="empty-seat"></span>
+        <span>可选座位</span>
+      </div>
+      <div class="float">
+        <span class="selected-seat"></span>
+        <span>已选座位</span>
+      </div>
+      <div class="float">
+        <span class="unavailable-seat"></span>
+        <span>不可选座位</span>
+      </div>
+    </div>
+  </div>
+  <div class="selected-seat-info float">
+    <div class="movie-info">
+      <img class="float poster" src="../../../assets/image.jpg">
+      <div class="float movie-word-info">
+        <h5>神奇女侠</h5>
+        <div>
+          <span>版本：</span>
+          <span>英语 3D</span>
+        </div>
+        <div>
+          <span>片长：</span>
+          <span>142分钟</span>
+        </div>
+      </div>
+    </div>
+    <div class="selected-seat-detail">
+      <div>
+        <span>影院：</span>
+        <span>大地影院-人和华通店</span>
+      </div>
+      <div>
+        <span>影厅：</span>
+        <span>影厅4</span>
+      </div>
+      <div>
+        <span>场次：</span>
+        <span class="showing-date">6月5日(周一) 17:10</span>
+      </div>
+      <div class="seat-confirm">
+        <span class="float">座位：</span>
+        <div class="float seat-box" *ngFor="let selectedSeat of selectedSeats">{{selectedSeat.row+1}}排{{selectedSeat.col+1}}座</div>
+      </div>
+      <div>
+        <span>单价：</span>
+        <span >￥41</span>
+      </div>
+      <div>
+        <span>总计：</span>
+        <span class="count">￥</span>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div>接收电子码的手机号(11位)</div>
+      <input class="form-control phone-number" disabled value="12345678910">
+    </div>
+    <button class="confirm-button" [routerLink]="['/confirmOrder', 1, 2, 3]">确认信息，下单</button>
+  </div>
+</div>
