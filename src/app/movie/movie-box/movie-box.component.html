@@ -1,8 +1,8 @@
 <div class="movieBox">
-  <div class="movieImage"></div>
-  <a class="sellTicket" [routerLink]="['/movieDescription',1]">购 票</a>
+  <img class="movieImage" [src]="movie.poster">
+  <a class="sellTicket" [routerLink]="['/movieDescription', movie.id]">购 票</a>
   <div class="movieMessage">
     <div class="movieName col-xs-9">{{movie.name}}</div>
-    <div class="movieScore col-xs-3">{{movie.score}}</div>
+    <div class="movieScore col-xs-3">{{movie.avgScore}}</div>
   </div>
 </div>

@@ -21,5 +21,4 @@ export class MovieListComponent implements OnInit {
       this.movieList = res;
     })
   }
-
 }

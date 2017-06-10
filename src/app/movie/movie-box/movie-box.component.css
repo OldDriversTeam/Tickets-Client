@@ -2,24 +2,24 @@
   position: relative;
   width: 162px;
   height: 261px;
-  border: 1px solid #efefef;
 }
 
 .movieImage {
-  width: 160px;
+  display: block;
+  width: 162px;
   height: 220px;
-  background-image: url(../../../assets/image.jpg);
-  background-size: 100% 100%;
 }
 
 .sellTicket {
   display: block;
-  width: 160px;
+  width: 162px;
   height: 39px;
   padding-top: 0.8rem;
   color: red;
   font-size: 1.5rem;
-  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
 }
 
 .sellTicket:hover {
@@ -35,7 +35,7 @@
   bottom: 20%;
   color: white;
   background-color: #515354;
-  opacity: 0.7;
+  opacity: 0.87;
   padding-top: 3px;
   padding-bottom: 3px;
 }

@@ -10,14 +10,6 @@
   }
 }
 
-.container {
-  border: 1px solid blue;
-}
-
-.box {
-  border: 1px solid black;
-}
-
 .movie-list-container {
   min-width: 725px;
 }

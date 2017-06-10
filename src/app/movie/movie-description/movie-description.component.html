@@ -2,10 +2,11 @@
   <div class="movie-description">
     <div class="des">
       <h4>
-        <span class="title">速度与激情8</span>
+        <span class="title">{{movie.name}}</span>
+        <span class="score">{{movie.avgScore}}</span>
       </h4>
       <hr>
-      <img src="../../../assets/image.jpg" class="image float">
+      <img [src]="movie.poster" class="image float">
       <div class="description float">
         <ul class="float messageTitle">
           <li>
@@ -32,13 +33,13 @@
         </ul>
         <ul class="float message">
           <li>
-            <span>{{movie.date}}</span>
+            <span>{{movie.releaseDate}}</span>
           </li>
           <li>
             <span>{{movie.director}}</span>
           </li>
           <li>
-            <span>{{movie.type}}</span>
+            <span>{{movie.movieType}}</span>
           </li>
           <li>
             <span>{{movie.area}}</span>
@@ -56,7 +57,7 @@
       </div>
     </div>
     <hr id="divider" class="clear">
-    <div class="introduction">剧情介绍：{{movie.introduction}}</div>
+    <div class="introduction">剧情介绍：{{movie.storyLine}}</div>
   </div>
 </div>
 
@@ -66,7 +67,14 @@
   </div>
   <hr>
   <div class="cinema-list">
-    <div *ngFor="let cinema of cinemaList; index as i" class="cinema-box" [ngClass]="{'selected-cinema': i == selectedCinemaIndex}" (click)="selectCinema(cinema, $event.target, i)">{{cinema.name}}</div>
+    <div *ngFor="let cinema of cinemaList; index as i" class="select-box" [ngClass]="{'selected': i == selectedCinemaIndex}" (click)="selectCinema(cinema, i)">{{cinema.name}}</div>
+  </div>
+  <div class="select-date">
+    <span>选择日期</span>
+  </div>
+  <hr>
+  <div class="date-list">
+    <div class="select-box" *ngFor="let date of dateList; index as i" [ngClass]="{'selected': i == selectedDateIndex}" (click)="selectDate(date, i)">{{date}}</div>
   </div>
 </div>
 
