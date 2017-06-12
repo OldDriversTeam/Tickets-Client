@@ -55,8 +55,8 @@
       <div>{{room.time}}</div>
       </td>
       <td>
-      <div>{{room.seat.length}}张</div>
-      <div class="seat-info" *ngFor="let seat of room.seat">{{seat.row}}排{{seat.col}}座</div>
+      <div>{{room.seats.length}}张</div>
+      <div class="seat-info" *ngFor="let seat of room.seats">{{seat[0]}}排{{seat[1]}}座</div>
       </td>
       <td class="count">￥{{room.totalPrice}}</td>
       <td class="phone">{{phone}}</td>
@@ -69,5 +69,5 @@
     <span>实付款:</span>
     <span>￥{{room.totalPrice}}</span>
   </div>
-  <button class="confirm-button" routerLink="/paySuccess" (click)="confirmOrder()">确认订单，立即支付</button>
+  <button class="confirm-button" (click)="confirmOrder()">确认订单，立即支付</button>
 </div>

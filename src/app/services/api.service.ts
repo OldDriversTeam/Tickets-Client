@@ -20,6 +20,8 @@ export class ApiService {
     this.apiUrl.cinemaList = this.baseUrl + '/api/showings/movie/';
     this.apiUrl.userData = this.baseUrl + '/api/users/';
     this.apiUrl.showingList = this.baseUrl + '/api/showings/';
+    this.apiUrl.buyTickets = this.baseUrl + '/api/tickets/order';
+    this.apiUrl.room = this.baseUrl + '/api/rooms/';
   }
 
 }

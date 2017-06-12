@@ -17,7 +17,7 @@ export class MovieDescriptionComponent implements OnInit {
   public cinemaData = [];
   public cinemaList = [];
   public showingList = [];
-  public dateList = ["6月5号(今天)", "6月6号", "6月7号"];
+  public dateList = ["2017-06-12", "2017-06-13"];
   public selectedCinemaIndex = 0;
   public selectedDateIndex = 0;
 
@@ -76,7 +76,7 @@ export class MovieDescriptionComponent implements OnInit {
 
     this.showingService.getShowingList(reqData).subscribe(res => {
       this.showingList = res.showingList;
-      console.log(this.showingList);
+      console.log("this.showingList", this.showingList);
     },
     error => {
       console.log(error);
@@ -84,11 +84,22 @@ export class MovieDescriptionComponent implements OnInit {
   }
 
   public setRoomData(showing) {
+    console.log("showing", showing)
+    let date = this.dateList[this.selectedDateIndex];
+    let month = date.substring(5, 7);
+    if (month[0] === '0') month = month[1];
+    let day = date.substring(8, 10);
+    if (day[0] === '0') day = day[1];
+    let hour = showing.time.substring(0, 2);
+    let minute = showing.time.substring(3, 5);
+    let time = month + '月' + day + '日 ' + hour + ':' + minute;
     this.roomService.roomData = {
+      showingId: showing.showingId,
       cinemaName: this.cinemaList[this.selectedCinemaIndex].name,
       roomName: showing.roomName,
-      time: this.dateList[this.selectedDateIndex] + ' ' + showing.time,
-      seat: [],
+      roomId: showing.roomId,
+      time: time,
+      seats: [],
       price: showing.price,
       totalPrice: null
     }

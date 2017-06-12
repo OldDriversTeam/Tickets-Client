@@ -26,24 +26,30 @@ export class SeatComponent implements OnInit {
         this.seats[i][j] = "empty";
       }
     }
-    this.room = this.roomService.roomData;
-    this.phone = this.authService.thisUser.phone;
   }
 
 
   ngOnInit() {
+    this.room = this.roomService.roomData;
+    this.phone = this.authService.thisUser.phone;
+    console.log("this.room", this.room);
+    this.loadData(this.room.roomId);
+  }
+
+  public loadData(roomId) {
+    this.roomService.loadSeatInfo(roomId).subscribe(res => {
+      console.log(res);
+    },
+    error => {
+      console.log(error);
+    });
   }
 
   public toggleSeat(i, j) {
     if (this.seats[i][j] === "empty") {
       if (this.selectedSeats.length < 5) {
         this.seats[i][j] = "selected";
-        var seatInfo = {
-          row: null,
-          col: null
-        }
-        seatInfo.row = i;
-        seatInfo.col = j;
+        var seatInfo = [i+1, j+1];
         this.selectedSeats.push(seatInfo);
         this.totalPrice += this.room.price;
       } else {
@@ -52,7 +58,7 @@ export class SeatComponent implements OnInit {
     } else if (this.seats[i][j] == "selected") {
       this.seats[i][j] = "empty";
       for (var x = 0; x < this.selectedSeats.length; ++x) {
-        if (this.selectedSeats[x].row == i && this.selectedSeats[x].col == j) {
+        if (this.selectedSeats[x][0] == i && this.selectedSeats[x][1] == j) {
           this.selectedSeats.splice(x, 1);
           break;
         }
@@ -65,7 +71,7 @@ export class SeatComponent implements OnInit {
 
   public confirmSeat() {
     if (this.selectedSeats.length != 0) { 
-      this.roomService.roomData.seat = this.selectedSeats;
+      this.roomService.roomData.seats = this.selectedSeats;
       this.roomService.roomData.totalPrice = this.totalPrice;
       this.router.navigateByUrl("confirmOrder");
     } else {

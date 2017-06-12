@@ -24,6 +24,7 @@ import { MovieService } from './services/movie.service';
 import { CinemaService } from './services/cinema.service';
 import { ShowingService } from './services/showing.service';
 import { RoomService } from './services/room.service';
+import { TicketService } from './services/ticket.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { RoomService } from './services/room.service';
     MovieService,
     CinemaService,
     ShowingService,
-    RoomService
+    RoomService,
+    TicketService
   ],
   bootstrap: [AppComponent]
 })

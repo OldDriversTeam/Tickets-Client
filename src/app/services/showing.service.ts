@@ -13,8 +13,8 @@ export class ShowingService {
               public apiService:ApiService) { }
 
   public getShowingList(reqData) {
-  	let url = 'src/mock-data/showing-list.json';
-  	// let url = this.apiService.apiUrl.showingList + 'cinema/' + reqData.cinemaId + '/date/' + reqData.date + '/movie/' + reqData.movieId;
+  	// let url = 'src/mock-data/showing-list.json';
+  	let url = this.apiService.apiUrl.showingList + 'cinema/' + reqData.cinemaId + '/date/' + reqData.date + '/movie/' + reqData.movieId;
     return this.http
                .get(url)
                .map((res:Response) => {

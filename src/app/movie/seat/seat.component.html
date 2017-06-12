@@ -72,7 +72,7 @@
       </div>
       <div class="seat-confirm">
         <span class="float">座位：</span>
-        <div class="float seat-box" *ngFor="let selectedSeat of selectedSeats">{{selectedSeat.row+1}}排{{selectedSeat.col+1}}座</div>
+        <div class="float seat-box" *ngFor="let selectedSeat of selectedSeats">{{selectedSeat[0]}}排{{selectedSeat[1]}}座</div>
       </div>
       <div>
         <span>单价：</span>
