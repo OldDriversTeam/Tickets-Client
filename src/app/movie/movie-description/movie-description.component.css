@@ -141,13 +141,13 @@ li {
   padding-top: 20px !important;
 }
 
-.cinema-movie-table th:last-child {
-  padding-left: 37px !important;
-}
-
 .price {
   color: #EB002A;
   font-size: 2rem;
   font-weight: bold;
   margin-top: -3px;
+}
+
+.buy-ticket:hover {
+  cursor: pointer;
 }

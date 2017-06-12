@@ -3,8 +3,11 @@ import { MovieService } from '../../services/movie.service';
 import { CinemaService } from '../../services/cinema.service';
 import { ShowingService } from '../../services/showing.service';
 import { RoomService } from '../../services/room.service';
+import { AuthService } from '../../services/auth.service';
 
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-movie-description',
@@ -17,7 +20,8 @@ export class MovieDescriptionComponent implements OnInit {
   public cinemaData = [];
   public cinemaList = [];
   public showingList = [];
-  public dateList = ["2017-06-12", "2017-06-13"];
+  public dateList = [];
+  public showDateList = [];
   public selectedCinemaIndex = 0;
   public selectedDateIndex = 0;
 
@@ -25,7 +29,10 @@ export class MovieDescriptionComponent implements OnInit {
               public cinemaService: CinemaService,
               public showingService: ShowingService,
               public roomService: RoomService,
-              public route: ActivatedRoute) { }
+              public authService: AuthService,
+              public route: ActivatedRoute,
+              public router: Router,
+              public toastr: ToastsManager) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -46,8 +53,26 @@ export class MovieDescriptionComponent implements OnInit {
       this.cinemaData = res.showingList;
       if (this.cinemaData[0] && this.cinemaData[0].cinemaList) {
         this.cinemaList = this.cinemaData[0].cinemaList;
-        this.loadShowingList(this.cinemaList[this.selectedCinemaIndex].id, this.dateList[this.selectedDateIndex], id);
       }
+      if (this.cinemaData[0] && this.cinemaData[0].date) {
+        this.dateList.push(this.cinemaData[0].date);
+        let month = this.cinemaData[0].date.substring(5, 7);
+        let day = this.cinemaData[0].date.substring(8, 10);
+        if (month[0] === '0') month = month[1];
+        if (day[0] === '0') day = day[1];
+        let time = month + '月' + day + '日';
+        this.showDateList.push(time);
+      }
+      if (this.cinemaData[1] && this.cinemaData[1].date) {
+        this.dateList.push(this.cinemaData[1].date);
+        let month = this.cinemaData[1].date.substring(5, 7);
+        let day = this.cinemaData[1].date.substring(8, 10);
+        if (month[0] === '0') month = month[1];
+        if (day[0] === '0') day = day[1];
+        let time = month + '月' + day + '日';
+        this.showDateList.push(time);
+      }
+      this.loadShowingList(this.cinemaList[this.selectedCinemaIndex].id, this.dateList[this.selectedDateIndex], id);
     },
     error => {
       console.log(error);
@@ -63,7 +88,7 @@ export class MovieDescriptionComponent implements OnInit {
     this.selectedDateIndex = i;
     if (this.cinemaData[i] && this.cinemaData[i].cinemaList) {
       this.cinemaList = this.cinemaData[i].cinemaList;
-      this.loadShowingList(this.cinemaList[this.selectedCinemaIndex].id, date, this.movieId);
+      this.loadShowingList(this.cinemaList[this.selectedCinemaIndex].id, this.dateList[this.selectedDateIndex], this.movieId);
     }
   }
 
@@ -88,23 +113,23 @@ export class MovieDescriptionComponent implements OnInit {
     });
   }
 
-  public setRoomData(showing) {
-    console.log("showing", showing)
-    let date = this.dateList[this.selectedDateIndex];
-    let month = date.substring(5, 7);
-    if (month[0] === '0') month = month[1];
-    let day = date.substring(8, 10);
-    if (day[0] === '0') day = day[1];
-    let time = month + '月' + day + '日 ' + showing.time;
-    this.roomService.roomData = {
-      showingId: showing.showingId,
-      cinemaName: this.cinemaList[this.selectedCinemaIndex].name,
-      roomName: showing.roomName,
-      roomId: showing.roomId,
-      time: time,
-      seats: [],
-      price: showing.price,
-      totalPrice: null
+  public buyTickets(showing) {
+    if (this.authService.isLogin()) {
+      console.log("showing", showing)
+      let time = this.showDateList[this.selectedDateIndex] + ' ' + showing.time;
+      this.roomService.roomData = {
+        showingId: showing.showingId,
+        cinemaName: this.cinemaList[this.selectedCinemaIndex].name,
+        roomName: showing.roomName,
+        roomId: showing.roomId,
+        time: time,
+        seats: [],
+        price: showing.price,
+        totalPrice: null
+      }
+      this.router.navigateByUrl("/seat");
+    } else {
+      this.toastr.success('请先登录再购票', '系统提示');
     }
   }
 }

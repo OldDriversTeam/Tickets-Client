@@ -65,7 +65,7 @@ export class SeatComponent implements OnInit {
     } else if (this.seats[i][j] == "selected") {
       this.seats[i][j] = "empty";
       for (var x = 0; x < this.selectedSeats.length; ++x) {
-        if (this.selectedSeats[x][0] == i && this.selectedSeats[x][1] == j) {
+        if (this.selectedSeats[x][0] == i + 1 && this.selectedSeats[x][1] == j + 1) {
           this.selectedSeats.splice(x, 1);
           break;
         }

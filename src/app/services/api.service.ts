@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiService {
   public apiUrl;
-  private baseUrl = "http://172.18.71.226:8080";
+  // private baseUrl = "http://172.18.71.226:8080";
+  private baseUrl = "http://211.159.183.245:8080/tickets/";
   constructor() {
     // this.apiUrl = {};
     // this.apiUrl.be_movies = 'src/mock-data/movie-list.json';

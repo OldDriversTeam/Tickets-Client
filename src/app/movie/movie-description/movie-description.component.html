@@ -74,7 +74,7 @@
   </div>
   <hr>
   <div class="date-list">
-    <div class="select-box" *ngFor="let date of dateList; index as i" [ngClass]="{'selected': i == selectedDateIndex}" (click)="selectDate(date, i)">{{date}}</div>
+    <div class="select-box" *ngFor="let date of showDateList; index as i" [ngClass]="{'selected': i == selectedDateIndex}" (click)="selectDate(date, i)">{{date}}</div>
   </div>
 </div>
 
@@ -98,7 +98,7 @@
                   <div class="price">{{showing.price}}</div>
               </td>
               <td>
-                <a class="buy-ticket" routerLink="/seat" (click)="setRoomData(showing)">选座购票</a>
+                <a class="buy-ticket" (click)="buyTickets(showing)">选座购票</a>
               </td>
           </tr>
       </tbody>

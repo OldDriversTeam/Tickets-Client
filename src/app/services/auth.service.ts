@@ -66,12 +66,17 @@ export class AuthService {
     let that = this;
     return this.http.post(this.apiService.apiUrl.updateUser, user).map((response: Response) => {
       let res = response.json();
-      that.thisUser = res.user;
-      that.currentUser.next(res.user);
+      console.log("res", res);
+      that.thisUser = user;
+      that.currentUser.next(user);
       return res;
     })
     .catch(error => {
       return Observable.throw(error);
     });
+  }
+
+  public isLogin() {
+    return this.thisUser.id ? true : false;
   }
 }
