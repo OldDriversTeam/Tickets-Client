@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RoomService } from '../../services/room.service';
 
 @Component({
   selector: 'app-seat',
@@ -9,14 +10,16 @@ export class SeatComponent implements OnInit {
 
   public seats = new Array(13);
   public selectedSeats = [];
+  public room;
 
-  constructor() {
+  constructor(public roomService: RoomService) {
     for (var i = 0; i < this.seats.length; ++i) {
       this.seats[i] = new Array(15);
       for (var j = 0; j < this.seats[i].length; ++j) {
         this.seats[i][j] = "empty";
       }
     }
+    this.room = this.roomService.roomData;
   }
 
 

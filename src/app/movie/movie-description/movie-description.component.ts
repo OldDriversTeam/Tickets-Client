@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { CinemaService } from '../../services/cinema.service';
 import { ShowingService } from '../../services/showing.service';
+import { RoomService } from '../../services/room.service';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -23,6 +24,7 @@ export class MovieDescriptionComponent implements OnInit {
   constructor(public movieService: MovieService,
               public cinemaService: CinemaService,
               public showingService: ShowingService,
+              public roomService: RoomService,
               public route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -79,5 +81,16 @@ export class MovieDescriptionComponent implements OnInit {
     error => {
       console.log(error);
     });
+  }
+
+  public setRoomData(showing) {
+    this.roomService.roomData = {
+      cinemaName: this.cinemaList[this.selectedCinemaIndex].name,
+      roomName: showing.roomName,
+      time: this.dateList[this.selectedDateIndex] + ' ' + showing.time,
+      seat: [],
+      price: showing.price,
+      totalPrice: null
+    }
   }
 }

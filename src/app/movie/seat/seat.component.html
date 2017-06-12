@@ -60,15 +60,15 @@
     <div class="selected-seat-detail">
       <div>
         <span>影院：</span>
-        <span>大地影院-人和华通店</span>
+        <span>{{room.cinemaName}}</span>
       </div>
       <div>
         <span>影厅：</span>
-        <span>影厅4</span>
+        <span>{{room.roomName}}</span>
       </div>
       <div>
         <span>场次：</span>
-        <span class="showing-date">6月5日(周一) 17:10</span>
+        <span class="showing-date">{{room.time}}</span>
       </div>
       <div class="seat-confirm">
         <span class="float">座位：</span>
@@ -76,7 +76,7 @@
       </div>
       <div>
         <span>单价：</span>
-        <span >￥41</span>
+        <span >￥{{room.price}}</span>
       </div>
       <div>
         <span>总计：</span>
