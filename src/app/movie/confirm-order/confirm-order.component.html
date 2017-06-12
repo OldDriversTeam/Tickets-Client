@@ -50,16 +50,16 @@
         </div>
       </td>
       <td class="showing-info">
-      <div>大地影院-人和华通店</div>
-      <div>影厅4</div>
-      <div>6月6日 (周二) 14:30</div>
+      <div>{{room.cinemaName}}</div>
+      <div>{{room.roomName}}</div>
+      <div>{{room.time}}</div>
       </td>
       <td>
-      <div>1张</div>
-      <div class="seat-info">7排8座</div>
+      <div>{{room.seat.length}}张</div>
+      <div class="seat-info" *ngFor="let seat of room.seat">{{seat.row}}排{{seat.col}}座</div>
       </td>
-      <td class="count">￥39</td>
-      <td class="phone">12345678910</td>
+      <td class="count">￥{{room.totalPrice}}</td>
+      <td class="phone">{{phone}}</td>
     </tr>
   </table>
 </div>
@@ -67,9 +67,7 @@
 <div class="price-info">
   <div class="price-count">
     <span>实付款:</span>
-    <span>￥39</span>
+    <span>￥{{room.totalPrice}}</span>
   </div>
-  <button class="confirm-button" routerLink="/paySuccess">确认订单，立即支付</button>
+  <button class="confirm-button" routerLink="/paySuccess" (click)="confirmOrder()">确认订单，立即支付</button>
 </div>
-
-

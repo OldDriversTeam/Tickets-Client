@@ -80,14 +80,14 @@
       </div>
       <div>
         <span>总计：</span>
-        <span class="count">￥</span>
+        <span class="count">￥{{totalPrice}}</span>
       </div>
     </div>
     <hr>
     <div>
       <div>接收电子码的手机号(11位)</div>
-      <input class="form-control phone-number" disabled value="12345678910">
+      <input class="form-control phone-number" disabled [(ngModel)]="phone">
     </div>
-    <button class="confirm-button" [routerLink]="['/confirmOrder', 1, 2, 3]">确认信息，下单</button>
+    <button class="confirm-button" (click)="confirmSeat()">确认信息，下单</button>
   </div>
 </div>

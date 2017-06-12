@@ -30,11 +30,11 @@ export const appRoutes = [
         component: MovieDescriptionComponent
     },
     {
-        path: 'seat/:cinemaId/:showingId/:movieId',
+        path: 'seat',
         component: SeatComponent
     },
     {
-        path: 'confirmOrder/:cinemaId/:showingId/:movieId',
+        path: 'confirmOrder',
         component: ConfirmOrderComponent
     },
     {

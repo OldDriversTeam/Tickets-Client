@@ -98,7 +98,7 @@
                   <div class="price">{{showing.price}}</div>
               </td>
               <td>
-                <a class="buy-ticket" [routerLink]="['/seat', 1, 2, 3]" (click)="setRoomData(showing)">选座购票</a>
+                <a class="buy-ticket" routerLink="/seat" (click)="setRoomData(showing)">选座购票</a>
               </td>
           </tr>
       </tbody>
