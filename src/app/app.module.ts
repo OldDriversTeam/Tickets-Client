@@ -23,6 +23,7 @@ import { ApiService } from './services/api.service';
 import { MovieService } from './services/movie.service';
 import { CinemaService } from './services/cinema.service';
 import { ShowingService } from './services/showing.service';
+import { RoomService } from './services/room.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ShowingService } from './services/showing.service';
     ApiService,
     MovieService,
     CinemaService,
-    ShowingService
+    ShowingService,
+    RoomService
   ],
   bootstrap: [AppComponent]
 })
