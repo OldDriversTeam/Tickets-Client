@@ -72,8 +72,8 @@ export class UserRegisterComponent implements OnInit {
   Register() {
     if (this.userForm.valid) {
       let that = this;
-      this.userInfo.name = this.userForm.value.name;
       this.userInfo.phone = this.userForm.value.phone;
+      this.userInfo.name = this.userForm.value.name;
       this.userInfo.password = this.userForm.value.password;
       
       this.authService.register(this.userInfo)

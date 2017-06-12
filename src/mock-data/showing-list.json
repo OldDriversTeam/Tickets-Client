@@ -1,0 +1,40 @@
+{
+    "size": 5,
+    "showingList": [
+      {
+      	"showingId": "1",
+        "time": "12:00",
+        "price": "39",
+        "roomId": "1",
+        "roomName": "1号厅"
+      },
+      {
+        "showingId": "2",
+        "time": "15:00",
+        "price": "39",
+        "roomId": "2",
+        "roomName": "3号厅"
+      },
+      {
+        "showingId": "3",
+        "time": "18:00",
+        "price": "39",
+        "roomId": "3",
+        "roomName": "2号厅"
+      },
+      {
+        "showingId": "4",
+        "time": "21:00",
+        "price": "39",
+        "roomId": "4",
+        "roomName": "4号厅"
+      },
+      {
+        "showingId": "5",
+        "time": "00:00",
+        "price": "39",
+        "roomId": "5",
+        "roomName": "1号厅"
+      }
+    ]
+}

@@ -128,6 +128,14 @@ li {
   padding-bottom: 10px;
 }
 
+.cinema-movie-table table {
+  text-align: center;
+}
+
+.cinema-movie-table th {
+  text-align: center;
+}
+
 .cinema-movie-table td {
   height: 60px !important;
   padding-top: 20px !important;

@@ -7,14 +7,14 @@ import 'rxjs/add/operator/catch';
 import { ApiService } from './api.service'
 
 @Injectable()
-export class CinemaService {
+export class ShowingService {
 
   constructor(public http:Http,
               public apiService:ApiService) { }
 
-  public getCinemaList(movieId) {
-    // let url = 'src/mock-data/cinema-list.json';
-    let url = this.apiService.apiUrl.cinemaList + movieId;
+  public getShowingList(reqData) {
+  	let url = 'src/mock-data/showing-list.json';
+  	// let url = this.apiService.apiUrl.showingList + 'cinema/' + reqData.cinemaId + '/date/' + reqData.date + '/movie/' + reqData.movieId;
     return this.http
                .get(url)
                .map((res:Response) => {
@@ -23,5 +23,4 @@ export class CinemaService {
                })
                .catch((error:any) => Observable.throw(error || 'Server error'));
   }
-
 }

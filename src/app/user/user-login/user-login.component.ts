@@ -27,6 +27,7 @@ export class UserLoginComponent implements OnInit {
   public login() {
     this.authService.login(this.user)
     .subscribe(data => {
+      console.log('user', data);
       if (data.user.name) {
         this.toastr.success('登陆成功', '系统提示');
         this.router.navigateByUrl("index");

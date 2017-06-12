@@ -32,7 +32,7 @@ export class AuthService {
 
   public register(user) {
     let that = this;
-    return this.http.post(this.apiService.apiUrl.be_addUser, user).map((response: Response) => {
+    return this.http.post(this.apiService.apiUrl.addUser, user).map((response: Response) => {
       let res = response.json();
       that.thisUser = res.user;
       that.currentUser.next(res.user);
@@ -45,7 +45,8 @@ export class AuthService {
 
   public login(user) {
     let that = this;
-    return this.http.post(this.apiService.apiUrl.be_login, user).map((response: Response) => {
+    console.log(user);
+    return this.http.post(this.apiService.apiUrl.login, user).map((response: Response) => {
       let res = response.json();
       that.thisUser = res.user;
       that.currentUser.next(res.user);
@@ -63,7 +64,7 @@ export class AuthService {
 
   public updateUser(user) {
     let that = this;
-    return this.http.post(this.apiService.apiUrl.be_updateUser, user).map((response: Response) => {
+    return this.http.post(this.apiService.apiUrl.updateUser, user).map((response: Response) => {
       let res = response.json();
       that.thisUser = res.user;
       that.currentUser.next(res.user);

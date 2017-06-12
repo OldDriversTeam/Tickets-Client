@@ -22,6 +22,7 @@ import { AuthService } from './services/auth.service';
 import { ApiService } from './services/api.service';
 import { MovieService } from './services/movie.service';
 import { CinemaService } from './services/cinema.service';
+import { ShowingService } from './services/showing.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CinemaService } from './services/cinema.service';
     AuthService,
     ApiService,
     MovieService,
-    CinemaService
+    CinemaService,
+    ShowingService
   ],
   bootstrap: [AppComponent]
 })

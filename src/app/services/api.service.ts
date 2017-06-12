@@ -15,8 +15,11 @@ export class ApiService {
     this.apiUrl.movies = this.baseUrl + '/api/movies/onshow';
     this.apiUrl.movieById = this.baseUrl + '/api/movies/';
     this.apiUrl.login = this.baseUrl + '/api/users/login';
-    this.apiUrl.addUser = this.baseUrl + '/api/users/add';
+    this.apiUrl.addUser = this.baseUrl + '/api/users/register';
     this.apiUrl.updateUser = this.baseUrl + '/api/users/update';
+    this.apiUrl.cinemaList = this.baseUrl + '/api/showings/movie/';
+    this.apiUrl.userData = this.baseUrl + '/api/users/';
+    this.apiUrl.showingList = this.baseUrl + '/api/showings/';
   }
 
 }
