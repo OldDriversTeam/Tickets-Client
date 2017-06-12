@@ -38,7 +38,14 @@ export class SeatComponent implements OnInit {
 
   public loadData(roomId) {
     this.roomService.loadSeatInfo(roomId).subscribe(res => {
-      console.log(res);
+      console.log("seatInfo", res);
+      this.seats = new Array(res.row);
+      for (var i = 0; i < this.seats.length; ++i) {
+        this.seats[i] = new Array(res.col);
+        for (var j = 0; j < this.seats[i].length; ++j) {
+          this.seats[i][j] = "empty";
+        }
+      }
     },
     error => {
       console.log(error);

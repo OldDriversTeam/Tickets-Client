@@ -12,6 +12,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class UserLoginComponent implements OnInit {
 
+  public formError = "";
+
   public user = {
     phone: "",
     password: ""
@@ -28,9 +30,15 @@ export class UserLoginComponent implements OnInit {
     this.authService.login(this.user)
     .subscribe(data => {
       console.log('user', data);
-      if (data.user.name) {
-        this.toastr.success('登陆成功', '系统提示');
-        this.router.navigateByUrl("index");
+      if (data.state == 402) {
+        this.formError = "用户不存在";
+      } else if (data.state == 403) {
+        this.formError = "密码错误，请重新输入密码";
+      } else {
+        if (data.user && data.user.name) {
+          this.toastr.success('登陆成功', '系统提示');
+          this.router.navigateByUrl("index");
+        }
       }
     },
     error => {

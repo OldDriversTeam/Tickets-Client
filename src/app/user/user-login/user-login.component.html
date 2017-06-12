@@ -19,6 +19,9 @@
                         <div class="text-danger"></div>
                     </div>
                 </div>
+                <div *ngIf="formError" class="text-danger" align="center">
+                    {{ formError }}
+                </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">

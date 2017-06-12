@@ -21,7 +21,7 @@
 <div class="seat-info-container">
   <div class="seat float" align="center">
     <div class="screen"></div>
-    <h5>大地影院-人和华通店 影厅4 银幕</h5>
+    <h5>{{room.cinemaName}} {{room.roomName}} 银幕</h5>
     <div class="seat-row" *ngFor="let seatRow of seats; index as i">
       <div class="row-index float">{{i+1}}</div>
       <div class="one-seat float" *ngFor="let seat of seatRow; index as j" [ngClass]="{'empty-seat': seat == 'empty', 'selected-seat': seat == 'selected', 'unavailable-seat': seat == 'unavailable'}" (click)="toggleSeat(i, j)"></div>

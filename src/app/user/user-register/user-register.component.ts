@@ -79,7 +79,7 @@ export class UserRegisterComponent implements OnInit {
       this.authService.register(this.userInfo)
         .subscribe(data => {
           console.log(data);
-          if (data.statusCode == 400 && data.errorCode == 402) {
+          if (data.state == 401) {
             that.formErrors.formError = "这个手机号码已经被注册";
           } else {
             that.router.navigateByUrl("index");

@@ -9,13 +9,13 @@ import { ApiService } from './api.service'
 @Injectable()
 export class AuthService {
   public thisUser = {
-      "id": "1",
-      "name": "zhudui",
-      "gender": "MALE",
-      "age": 20,
-      "phone": 11111111111,
-      "email": "11@qq.com",
-      "password": "qweqwe"
+      "id": null,
+      "name": null,
+      "gender": null,
+      "age": null,
+      "phone": null,
+      "email": null,
+      "password": null
     };
   public currentUser: Subject<any> = new Subject();
 

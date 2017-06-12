@@ -9,6 +9,12 @@ import { ApiService } from './api.service'
 @Injectable()
 export class MovieService {
 
+  public selectedMovie = {
+    name: null,
+    type: null,
+    poster: null
+  }
+
   constructor(public http:Http,
               public apiService:ApiService) { }
 
