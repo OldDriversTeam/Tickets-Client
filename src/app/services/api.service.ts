@@ -23,6 +23,7 @@ export class ApiService {
     this.apiUrl.showingList = this.baseUrl + '/api/showings/';
     this.apiUrl.buyTickets = this.baseUrl + '/api/tickets/order';
     this.apiUrl.room = this.baseUrl + '/api/rooms/';
+    this.apiUrl.soldSeats = this.baseUrl + '/api/tickets/showing/';
   }
 
 }

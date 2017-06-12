@@ -42,4 +42,16 @@ export class RoomService {
                })
                .catch((error:any) => Observable.throw(error || 'Server error'));
   }
+
+  public getSoldSeatList(showingId) {
+    let url = this.apiService.apiUrl.soldSeats + showingId;
+
+    return this.http
+               .get(url)
+               .map((res:Response) => {
+                 let result = res.json();
+                 return result;
+               })
+               .catch((error:any) => Observable.throw(error || 'Server error'));
+  }
 }

@@ -33,10 +33,10 @@ export class SeatComponent implements OnInit {
     this.room = this.roomService.roomData;
     this.phone = this.authService.thisUser.phone;
     console.log("this.room", this.room);
-    this.loadData(this.room.roomId);
+    this.loadData(this.room.roomId, this.room.showingId);
   }
 
-  public loadData(roomId) {
+  public loadData(roomId, showingId) {
     this.roomService.loadSeatInfo(roomId).subscribe(res => {
       console.log("seatInfo", res);
       this.seats = new Array(res.row);
@@ -46,6 +46,17 @@ export class SeatComponent implements OnInit {
           this.seats[i][j] = "empty";
         }
       }
+      this.roomService.getSoldSeatList(showingId).subscribe(res => {
+        console.log("res.seatSoldList", res);
+        if (res.seatSoldList) {
+          for (var i = 0; i < res.seatSoldList.length; ++i) {
+            this.seats[res.seatSoldList[i][0]-1][res.seatSoldList[i][1]-1] = "unavailable";
+          }
+        }
+      },
+      error => {
+        console.log(error);
+      })
     },
     error => {
       console.log(error);
