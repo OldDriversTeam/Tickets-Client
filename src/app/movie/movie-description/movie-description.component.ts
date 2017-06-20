@@ -51,6 +51,7 @@ export class MovieDescriptionComponent implements OnInit {
 
     this.cinemaService.getCinemaList(id).subscribe(res => {
       this.cinemaData = res.showingList;
+      console.log("this.cinemaData", this.cinemaData)
       if (this.cinemaData[0] && this.cinemaData[0].cinemaList) {
         this.cinemaList = this.cinemaData[0].cinemaList;
       }
@@ -72,7 +73,9 @@ export class MovieDescriptionComponent implements OnInit {
         let time = month + '月' + day + '日';
         this.showDateList.push(time);
       }
-      this.loadShowingList(this.cinemaList[this.selectedCinemaIndex].id, this.dateList[this.selectedDateIndex], id);
+      if (this.cinemaList.length != 0) {
+        this.loadShowingList(this.cinemaList[this.selectedCinemaIndex].id, this.dateList[this.selectedDateIndex], id);
+      }
     },
     error => {
       console.log(error);

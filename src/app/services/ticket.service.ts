@@ -24,5 +24,17 @@ export class TicketService {
                })
                .catch((error:any) => Observable.throw(error || 'Server error'));
   }
+  
+  public getMyTickets(userId) {
+    let url = this.apiService.apiUrl.myTickets + userId;
+
+    return this.http
+               .get(url)
+               .map((res:Response) => {
+                 let result = res.json();
+                 return result;
+               })
+               .catch((error:any) => Observable.throw(error || 'Server error'));
+  }
 
 }
