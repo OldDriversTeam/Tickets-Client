@@ -44,6 +44,7 @@ export class MovieDescriptionComponent implements OnInit {
   public loadData(id) {
     this.movieService.getMovieById(id).subscribe(res => {
       this.movie = res;
+      console.log("thisMovie", this.movie);
     },
     error => {
       console.log(error);

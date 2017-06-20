@@ -9,49 +9,55 @@
       <img [src]="movie.poster" class="image float">
       <div class="description float">
         <ul class="float messageTitle">
-          <li>
+          <li *ngIf="movie.releaseDate">
             <span>首映：</span>
           </li>
-          <li>
-            <span>导演：</span>
-          </li>
-          <li>
+          <li *ngIf="movie.movieType">
             <span>类型：</span>
           </li>
-          <li>
+          <li *ngIf="movie.director">
+            <span>导演：</span>
+          </li>
+          <li *ngIf="movie.area">
             <span>国家：</span>
           </li>
-          <li>
+          <li *ngIf="movie.language">
             <span>语言：</span>
           </li>
-          <li>
+          <li *ngIf="movie.length">
             <span>片长：</span>
           </li>
-          <li>
+          <li *ngIf="movie.actors">
             <span>主演：</span>
+          </li>
+          <li>
+            <span>详情：</span>
           </li>
         </ul>
         <ul class="float message">
-          <li>
+          <li *ngIf="movie.releaseDate">
             <span>{{movie.releaseDate}}</span>
           </li>
-          <li>
-            <span>{{movie.director}}</span>
-          </li>
-          <li>
+          <li *ngIf="movie.movieType">
             <span>{{movie.movieType}}</span>
           </li>
-          <li>
+          <li *ngIf="movie.director">
+            <span>{{movie.director}}</span>
+          </li>
+          <li *ngIf="movie.area">
             <span>{{movie.area}}</span>
           </li>
-          <li>
+          <li *ngIf="movie.language">
             <span>{{movie.language}}</span>
           </li>
-          <li>
+          <li *ngIf="movie.length">
             <span>{{movie.length}}</span>
           </li>
-          <li>
+          <li *ngIf="movie.actors">
             <span>{{movie.actors}}</span>
+          </li>
+          <li>
+            <span>{{movie.detail}}</span>
           </li>
         </ul>
       </div>
