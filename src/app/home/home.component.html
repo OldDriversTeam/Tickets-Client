@@ -1,4 +1,11 @@
 <div class="container">
+	<div class="poster-carousel">
+		<carousel>
+		  <slide *ngFor="let movie of movieList">
+		    <img class="movie-poster" [src]="movie.cover" [routerLink]="['/movieDescription', movie.id]">
+		  </slide>
+		</carousel>
+	</div>
     <div class="row">
         <div class="col-xs-9 movie-list-container box">
             <!--这里是左侧动态加载的内容-->

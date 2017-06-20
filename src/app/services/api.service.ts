@@ -25,6 +25,7 @@ export class ApiService {
     this.apiUrl.room = this.baseUrl + '/api/rooms/';
     this.apiUrl.soldSeats = this.baseUrl + '/api/tickets/showing/';
     this.apiUrl.myTickets = this.baseUrl + '/api/tickets/user/';
+    this.apiUrl.coverList = this.baseUrl + '/api/movies/cover';
   }
 
 }

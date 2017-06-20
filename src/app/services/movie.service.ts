@@ -39,4 +39,15 @@ export class MovieService {
                })
                .catch((error:any) => Observable.throw(error || 'Server error'));
   }
+
+  public getMovieCoverList() {
+    let url = this.apiService.apiUrl.coverList;
+    return this.http
+               .get(url)
+               .map((res:Response) => {
+                 let result = res.json();
+                 return result;
+               })
+               .catch((error:any) => Observable.throw(error || 'Server error'));
+  }
 }
