@@ -44,16 +44,12 @@
   </div>
   <div class="selected-seat-info float">
     <div class="movie-info">
-      <img class="float poster" src="../../../assets/image.jpg">
+      <img class="float poster" [src]="selectedMovie.poster">
       <div class="float movie-word-info">
-        <h5>神奇女侠</h5>
+        <h5>{{selectedMovie.name}}</h5>
         <div>
-          <span>版本：</span>
-          <span>英语 3D</span>
-        </div>
-        <div>
-          <span>片长：</span>
-          <span>142分钟</span>
+          <span>类型：</span>
+          <span>{{selectedMovie.movieType}}</span>
         </div>
       </div>
     </div>

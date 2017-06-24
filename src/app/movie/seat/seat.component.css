@@ -70,6 +70,7 @@
 }
 
 .seat-row {
+  display: inline-block;
   overflow: auto;
   height: 29px;
   margin-bottom: 3px;

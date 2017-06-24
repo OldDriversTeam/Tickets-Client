@@ -11,7 +11,7 @@ export class MovieService {
 
   public selectedMovie = {
     name: null,
-    type: null,
+    movieType: null,
     poster: null
   }
 

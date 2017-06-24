@@ -16,7 +16,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 })
 export class MovieDescriptionComponent implements OnInit {
   public movieId;
-  public movie = {};
+  public movie;
   public cinemaData = [];
   public cinemaList = [];
   public showingList = [];
@@ -130,6 +130,11 @@ export class MovieDescriptionComponent implements OnInit {
         seats: [],
         price: showing.price,
         totalPrice: null
+      }
+      this.movieService.selectedMovie = {
+        name: this.movie.name,
+        movieType: this.movie.movieType,
+        poster: this.movie.poster
       }
       this.router.navigateByUrl("/seat");
     } else {

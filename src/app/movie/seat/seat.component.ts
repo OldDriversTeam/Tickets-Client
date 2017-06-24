@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import { RoomService } from '../../services/room.service';
 import { AuthService } from '../../services/auth.service';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-seat',
@@ -11,21 +12,18 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SeatComponent implements OnInit {
 
-  public seats = new Array(13);
+  public seats;
   public selectedSeats = [];
   public totalPrice = 0;
   public room;
   public phone;
+  public selectedMovie;
 
   constructor(public roomService: RoomService,
               public authService: AuthService,
+              public movieService: MovieService,
               public router: Router) {
-    for (var i = 0; i < this.seats.length; ++i) {
-      this.seats[i] = new Array(15);
-      for (var j = 0; j < this.seats[i].length; ++j) {
-        this.seats[i][j] = "empty";
-      }
-    }
+    this.selectedMovie = this.movieService.selectedMovie;
   }
 
 
